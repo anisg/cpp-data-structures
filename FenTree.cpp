@@ -36,3 +36,13 @@ int main(){
 	cout << "--\n";
 	cout << d.range(1,2) << "\n";
 }
+
+//output
+/*
+1
+3
+6
+10
+--
+5
+*/
