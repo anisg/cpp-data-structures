@@ -26,6 +26,7 @@ struct FenTree {
 	int get(int i){ return range(i,i); }
 };
 
+//example
 int main(){
 	FenTree d({1,2,3,4});
 

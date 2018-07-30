@@ -29,11 +29,12 @@ template<typename T> struct SegmentTree {
 	T range(int l, int r){ return _range(0,n-1, l,r, 0); }
 };
 
+//example
 int sum(int a, int b){ return a + b; }
 //int maximum(int a, int b){ return max(a,b); }
 
 int main(){
-	SegmentTree<int> t({0,1,2,3,4}, &sum);
+	SegmentTree<int> t({0,1,2,3,4}, &sum, 0);
 
 	cout << t.range(0,0) << "\n";
 	cout << t.range(0,1) << "\n";

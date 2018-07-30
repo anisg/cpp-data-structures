@@ -5,12 +5,12 @@ using namespace std;
 // UnionFind : join(a,b), set(a), find(a)
 template<typename T> struct UnionFind {
 	vector<int> p; vector<T> sets;
-	UnionFind(int n, T v) : p(n),sets(n){
+	UnionFind(int n, T v={}) : p(n),sets(n){
 		for (int i=0; i<n; i++)
 			p[i]=i, sets[i]=v;
 	}
-	UnionFind(int n, T (*f)(int i) = 0) : p(n),sets(n){
-		for (int i=0; i<n; i++){ p[i]=i; if (f) sets[i]=f(i); }
+	UnionFind(int n, vector<T> &v) : p(n),sets(move(v)){
+		for (int i=0; i<n; i++) p[i]=i;
 	}
 	T & set(int a){ return sets[find(a)]; }
 	int find(int a){
